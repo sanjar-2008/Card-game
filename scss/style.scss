@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.wrapper{
+    width: 100%;
+    height: 969px;
+    padding: 75px;
+}
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    background: transparent;
+    &-block{
+        background: #fff;
+        border-radius: 7px;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        transform: rotateY(0deg);
+        transition: 0.3s;
+        background-color: aqua;
+    }
+}
+
+.card-block-view{
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    img{
+        height: 200px;
+        width: auto;
+    }
+}
+
+.card-block-back{
+    background: #fff;
+    position: absolute;
+    transform: rotateY(180deg);
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    img{
+        height: 200px;
+        width: auto;
+        
+    }
+}
+.end{
+    display: none;
+    position: fixed;
+    width: 1000px;
+    height: 500px;
+    background-color: blueviolet;
+    bottom: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+    &-block{
+        color: #fff;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        line-height: 15px;
+        align-items: center;
+        
+        p{
+            font-size: 50px;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        span{
+            font-size: 35px;
+            padding: 20px 15px;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            background: darkturquoise;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+.active{
+    transform: rotateY(180deg);
+    position: relative;
+    z-index: -1;
+    .card-block-view{
+        z-index: 0;
+    }
+    .card-block-back{
+        z-index: 1;
+    }
+}
